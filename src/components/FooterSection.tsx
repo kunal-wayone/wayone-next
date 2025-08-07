@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import { IoLogoFacebook, IoLogoInstagram } from 'react-icons/io';
 import { IoCallOutline, IoLocationOutline, IoMailOutline } from 'react-icons/io5';
 
 export default function FooterSection() {
@@ -48,6 +50,12 @@ export default function FooterSection() {
                     </ul>
                 </div>
 
+            </div>
+
+            <div className='flex items-center justify-start gap-4 w-44 mt-8 mb-10'>
+                <p className='font-semibold'>Follw Us</p>
+                <Link href={''}><IoLogoFacebook size={24} /></Link>
+                <Link href={''}><IoLogoInstagram size={24} /></Link>
             </div>
             <hr className='my-4 w-4/5' />
             {/* Contact Info */}

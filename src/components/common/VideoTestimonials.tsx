@@ -13,21 +13,23 @@ function VideoCard({ videoSrc, coverImage, description }: any) {
     };
 
     return (
-        <div className="flex-1 w-1/2 h-76 rounded-[2.5rem] overflow-hidden relative m-2">
+        <div className="flex-1 w-1/2 h-94 rounded-[2.5rem] overflow-hidden relative m-2">
             {!isPlaying && (
                 <div
                     className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center cursor-pointer z-10 rounded-xl"
                     onClick={handlePlay}
                 >
-                    <Image src={coverImage} width={900} height={900} alt="cover" className="absolute inset-0 w-full h-full object-cover rounded-xl" />
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-16 w-16 text-white z-20"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                    >
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
+                    <Image src={coverImage} width={900} height={900} alt="cover" className="absolute inset-0 w-full h-full object-cover opacity-80 rounded-xl" />
+                    <div className='bg-primary absolute z-50 rounded-full shadow-xl'>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-16 w-16 text-gray-200 z-20"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
                 </div>
             )}
             <video
@@ -49,12 +51,12 @@ export default function VideoTestimonials() {
         <div className="flex w-[55%]  bg-primary p-6 rounded-r-[3rem]">
             <VideoCard
                 videoSrc="/videos/testimonial1.mp4"
-                coverImage="/images/cover1.jpg"
+                coverImage="/assets/images/sekh1.png"
                 description="Customer Testimonial 1"
             />
             <VideoCard
                 videoSrc="/videos/testimonial2.mp4"
-                coverImage="/images/cover2.jpg"
+                coverImage="/assets/images/sekh1.png"
                 description="Customer Testimonial 2"
             />
         </div>

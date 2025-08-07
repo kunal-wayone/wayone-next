@@ -90,7 +90,7 @@ const OurDevSection = ({ sectionTitle, sectionDescription, cardsData }: any) => 
 
             {/* Section 2: Grid of Cards (4/6) */}
             < div
-                className="flex-4/6 px-6 bg-primary p-6"
+                className="flex-4/6 px-6 bg-primary p-6 relative"
                 style={{ borderTopLeftRadius: '3rem', borderBottomLeftRadius: '3rem' }}
             >
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
@@ -144,6 +144,13 @@ const OurDevSection = ({ sectionTitle, sectionDescription, cardsData }: any) => 
                             </Link>
                         </div>
                     </motion.div>
+                    <Image
+                        src={'/assets/images/serviceicon.png'}
+                        alt={'UAE'}
+                        width={900}
+                        height={900}
+                        className="w-auto h-5/6 absolute bottom-0 right-0 brightness-110 object-contain mr-auto"
+                    />
                 </div>
             </ div>
         </div >

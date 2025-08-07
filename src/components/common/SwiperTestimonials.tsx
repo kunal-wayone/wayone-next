@@ -26,7 +26,7 @@ const testimonials = [
 
 export default function SwiperTestimonials() {
   return (
-    <div className='w-4/5 max-w-md pr-6'>
+    <div className='w-4/5 max-w-md pr-6 mx-auto'>
       <div>
         <h3 className='text-3xl mb-2 font-bold w-full'>1200+ Clients, Unmatched
           <br />  <span className='text-primary'>

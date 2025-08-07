@@ -12,7 +12,7 @@ const liquidSlide: any = (direction = "left") => ({
         scale: 0.95,
         skewX: direction === "left" ? -5 : 5,
         transition: {
-            duration: 0.6,
+            duration: 0.4,
             ease: "easeInOut",
         },
     },
