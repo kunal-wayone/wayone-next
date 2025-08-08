@@ -53,16 +53,10 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <OurDevSection
-        sectionTitle="Our Core Development &Technology Services"
-        sectionDescription="We offer a wide range of services to boost your online presence and business growth. "
-        cardsData={cardsData}
-      />
       <ProjectSection />
       <TechSection />
       <WhyChooseUs />
       <ContactUs />
-      <IndustrySection />
       <TestimonialSection />
       <FooterSection />
     </div>

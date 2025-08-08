@@ -53,7 +53,7 @@ export default function FooterSection() {
             </div>
 
             <div className='flex items-center justify-start gap-4 w-44 mt-8 mb-10'>
-                <p className='font-semibold'>Follw Us</p>
+                <p className='font-semibold'>Follow Us</p>
                 <Link href={''}><IoLogoFacebook size={24} /></Link>
                 <Link href={''}><IoLogoInstagram size={24} /></Link>
             </div>
