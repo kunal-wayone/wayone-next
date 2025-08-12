@@ -2,12 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import {
-  motion,
   useMotionValue,
-  useTransform,
   animate,
 } from 'framer-motion';
-import Image from 'next/image';
 import TechIcon from './common/TechIcon';
 
 // Icon list

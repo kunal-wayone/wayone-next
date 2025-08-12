@@ -75,7 +75,7 @@ const LiquidCard = ({ member }: any) => (
 );
 
 // 🔹 Main Component
-export default function KeyChallenges({ subtitle, title, colorTitle, description, team }: any) {
+export default function KeyChallenges({  team, rtl }: any) {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const handleSlideChange = (swiper: any) => {
@@ -88,7 +88,7 @@ export default function KeyChallenges({ subtitle, title, colorTitle, description
         <div className="py-10 px-4 text-center max-w-7xl mx-auto">
 
             {/* Team Layout */}
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
+            <div className={`flex ${rtl ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"} items-center justify-center gap-10`}>
 
 
                 {/* Right Swiper Carousel */}
@@ -107,6 +107,28 @@ export default function KeyChallenges({ subtitle, title, colorTitle, description
                             depth: 100,
                             modifier: 1,
                             slideShadows: true,
+                        }}
+                        breakpoints={{
+                            320: {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                            },
+                            640: {
+                                slidesPerView: 1.5,
+                                spaceBetween: 20,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
+                            1280: {
+                                slidesPerView: 3,
+                                spaceBetween: 40,
+                            },
                         }}
                         modules={[EffectCoverflow]}
                         className="w-full max-w-2xl mx-auto"
@@ -131,7 +153,7 @@ export default function KeyChallenges({ subtitle, title, colorTitle, description
                             transition={{ duration: 0.3 }}
                         >
                             {/* Title Section */}
-                            <h3 className="text-xl text-secondary mb-2">{active?.industry +" "+" Industries Challenges"}</h3>
+                            <h3 className="text-xl text-secondary mb-2">{active?.industry + " " + " Industries Challenges"}</h3>
 
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
                                 {'Key Challenges in the'} <br /> <span className="text-primary">{active?.name}</span>

@@ -1,11 +1,9 @@
 import HeroSection from "@/components/common/HeroSection";
+import ProjectsCards from "@/components/common/ProjectsCards";
 import ContactUs from "@/components/ContactUs";
-import FooterSection from "@/components/FooterSection";
 import IndustrySection from "@/components/IndustrySection";
 import KeyChallenges from "@/components/KeyChallenges";
-import OurDevSection from "@/components/OurDevSection";
 import OurTeamSection from "@/components/OurTeamSection";
-import ProjectSection from "@/components/ProjectSection";
 import TechSection from "@/components/TechSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import VisionSection from "@/components/VisionSection";
@@ -99,50 +97,19 @@ const key = [
 ];
 
 
-const cardsData = [
-  {
-    title: "Web Development",
-    logo: "/assets/images/icons/web.png",
-    description: "End-to-end web, app, and enterprise technology solutions tailored to your business needs.",
-    link: "/frontend"
-  },
-  {
-    title: "Backend Development",
-    logo: "/assets/images/icons/app.png",
-    description: "Scalable and secure server-side APIs, databases, and core logic to power your applications.",
-    link: "/backend"
-  },
-  {
-    title: "DevOps & Cloud",
-    logo: "/assets/images/icons/ai.png",
-    description: "Automated CI/CD pipelines, cloud infrastructure, and scalability solutions for modern systems.",
-    link: "/devops"
-  },
-  {
-    title: "UI/UX Design",
-    logo: "/assets/images/icons/saas.png",
-    description: "Intuitive and engaging user interfaces with user-centered experience design strategies.",
-    link: "/design"
-  },
-  {
-    title: "Mobile App Development",
-    logo: "/assets/images/icons/ui.png",
-    description: "Native and cross-platform mobile applications for iOS and Android with seamless UX.",
-    link: "/mobile"
-  },
-  {
-    title: "AI & Machine Learning",
-    logo: "/assets/images/icons/ui.png",
-    description: "Intelligent solutions using machine learning, NLP, and data-driven automation.",
-    link: "/ai"
-  },
-];
 
 
 export default function Home() {
   return (
     <div className="">
-      <HeroSection />
+      <HeroSection
+        title1="Discover Who We Are – Your Dedicated Partner"
+        title2="in Technological Innovation and Excellence"
+        description="We utilize Advanced technologies to build scalable, high-performance solutions that facilitate business revolution. Our professional team provides precision-engineered products, ensuring that integration and optimization across all digital platforms are smooth for sustainable growth"
+        primaryLink="/contact-us"
+        secondaryLink="/our-work"
+        secondaryLinkTitle="Explore Works"
+      />
       <WhoWeAre
         title="Innovators in"
         colorTitle=" Web & App Development"
@@ -172,13 +139,12 @@ export default function Home() {
         description="We are passionate professionals."
         team={key}
       />
-      <ProjectSection />
+      <ProjectsCards />
       <TechSection />
       <WhyChooseUs />
       <ContactUs />
       <IndustrySection />
       <TestimonialSection />
-      <FooterSection />
     </div>
   );
 }

@@ -48,7 +48,7 @@ function VideoCard({ videoSrc, coverImage, description }: any) {
 
 export default function VideoTestimonials() {
     return (
-        <div className="flex w-[55%]  bg-primary p-6 rounded-r-[3rem]">
+        <div className="flex md:w-[55%]  bg-primary md:p-6 md:rounded-r-[3rem]">
             <VideoCard
                 videoSrc="/videos/testimonial1.mp4"
                 coverImage="/assets/images/sekh1.png"

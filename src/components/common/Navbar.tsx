@@ -10,49 +10,49 @@ import { IoCall } from "react-icons/io5";
 const services = [
   {
     name: "Web Development",
-    image: "/assets/images/webdev.png",
+    image: "/assets/images/navbar/webdev.png",
     path: "/services/web-development",
     id: "web-development", // Unique ID for submenu
   },
   {
     name: "App Development",
-    image: "/assets/images/appdev.png",
+    image: "/assets/images/navbar/appdev.png",
     path: "/services/app-development",
     id: "app-development", // Unique ID for submenu
   },
   {
     name: "Artificial Intelligence",
-    image: "/assets/images/ai.png",
+    image: "/assets/images/navbar/ai.png",
     path: "/services/artificial-intelligence",
     id: "ai", // Unique ID for submenu
   },
   {
     name: "Saas Development",
-    image: "/assets/images/saas.png",
+    image: "/assets/images/navbar/saas.png",
     path: "/services/saas-development",
     id: "saas", // Unique ID for submenu
   },
   {
     name: "CRM Development",
-    image: "/assets/images/crm.png",
+    image: "/assets/images/navbar/crm.png",
     path: "/services/crm-development",
     id: "crm", // Unique ID for submenu
   },
   {
     name: "UX/UI Designing",
-    image: "/assets/images/ux.png",
+    image: "/assets/images/navbar/ux.png",
     path: "/services/ux-ui-designing",
     id: "ux-ui", // Unique ID for submenu
   },
   {
     name: "Digital Marketing",
-    image: "/assets/images/webdev.png",
+    image: "/assets/images/navbar/webdev.png",
     path: "/services/digital-marketing",
     id: "digital-marketing", // Unique ID for submenu
   },
   {
     name: "API Development",
-    image: "/assets/images/api.png",
+    image: "/assets/images/navbar/api.png",
     path: "/services/api-development",
     id: "api", // Unique ID for submenu
   },
@@ -62,55 +62,55 @@ const industries = [
   {
     id: "health-care", // Added id
     name: "Health Care",
-    image: "/assets/images/serve1.png",
+    image: "/assets/images/navbar/serve1.png",
     path: "/industries/health-care",
   },
   {
     id: "retails-e-commerce", // Added id
     name: "Retails & E-Commerce",
-    image: "/assets/images/serve3.png",
+    image: "/assets/images/navbar/serve3.png",
     path: "/industries/retails-e-commerce",
   },
   {
     id: "real-estate-construction", // Added id
     name: "Real Estate & Construction",
-    image: "/assets/images/serve4.png",
+    image: "/assets/images/navbar/serve4.png",
     path: "/industries/real-estate-construction",
   },
   {
     id: "finance-banking", // Added id
     name: "Finance & Banking",
-    image: "/assets/images/serve5.png",
+    image: "/assets/images/navbar/serve5.png",
     path: "/industries/finance-banking",
   },
   {
     id: "education-service", // Added id
     name: "Education Service",
-    image: "/assets/images/serve7.png",
+    image: "/assets/images/navbar/serve7.png",
     path: "/industries/education-service",
   },
   {
     id: "logistic-transportation", // Added id
     name: "Logistic & Transportation",
-    image: "/assets/images/serve8.png",
+    image: "/assets/images/navbar/serve8.png",
     path: "/industries/logistic-transportation",
   },
   {
     id: "hospitality-tourism", // Added id
     name: "Hospitality & Tourism",
-    image: "/assets/images/serve9.png",
+    image: "/assets/images/navbar/serve9.png",
     path: "/industries/hospitality-tourism",
   },
   {
     id: "manufacturing", // Added id
     name: "Manufacturig Industries",
-    image: "/assets/images/serve10.png",
+    image: "/assets/images/navbar/serve10.png",
     path: "/industries/manufacturig-industries",
   },
   {
     id: "technology", // Added id
     name: "Technology & Innovation",
-    image: "/assets/images/serve10.png",
+    image: "/assets/images/navbar/serve10.png",
     path: "/industries/technology-innovation",
   },
 ];
@@ -173,12 +173,12 @@ const Navbar = () => {
   return (
     <nav
       // ${hideNav() ? "hidden" : ""} ${!scrolled ? "bg-transparent" : "bg-white shadow"}
-      className={`absolute flex justify-center p-4 lg:p-0 lg:justify-evenly items-center lg:h-24  top-0 z-[100] w-full `}
+      className={`absolute flex justify-between p-2 lg:p-0 lg:justify-evenly items-center lg:h-24  top-0 z-[100] w-full `}
     >
       <div>
         <Link href={"/"}>
           <Image
-            src={"/assets/images/logo.svg"}
+            src={"/assets/images/logo.png"}
             width={150}
             height={70}
             unoptimized
@@ -190,8 +190,7 @@ const Navbar = () => {
       </div>
 
       <ul
-        className="hidden max-w-6xl w-3/5 lg:flex justify-between items-center relative rounded-full py-3 px-10 text-white  bg-[#215cdb8a] 
-  border border-[#ffffff80] shadow-[inset_4px_4px_8px_#ffffff20,inset_-4px_-4px_8px_#ffffff10]"
+        className="hidden max-w-6xl w-3/5 lg:flex justify-between items-center relative rounded-full py-3 px-10 text-white  bg-[#215cdb8a] border border-[#ffffff80] shadow-[inset_4px_4px_8px_#ffffff20,inset_-4px_-4px_8px_#ffffff10]"
       >
         {/* Inset gradient overlay */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
@@ -224,36 +223,59 @@ const Navbar = () => {
             {/* Submenu */}
             {item.submenu && (
               <div
-                className={`absolute top-16 left-[-20rem] w-[60vw] mt-2 z-[10000] rounded-2xl bg-gray-100 text-gray-800 shadow ${activeSubmenuId === item.name ? "block" : "hidden"
-                  }`}
-                onMouseLeave={handleMouseLeave} // Reset on mouse leave
+                className={`
+                absolute top-16 left-[-20rem] w-[60vw] mt-2 z-[10000]
+                rounded-2xl bg-blue-600/60 backdrop-blur-lg
+                border border-white/20 shadow-2xl
+                transition-all duration-300 ease-in-out
+                ring-1 ring-white/10
+                ${activeSubmenuId === item.name ? "block" : "hidden"}
+              `}
+                onMouseLeave={handleMouseLeave}
               >
-                <ul className="space-y-2 p-2 grid grid-cols-1 lg:grid-cols-3">
+                <ul className="space-y-2 p-6 grid grid-cols-1 lg:grid-cols-3 gap-4">
                   {item.submenu.map((subItem: any) => (
                     <li key={subItem.id}>
                       <Link
                         href={subItem.path}
                         onClick={handleLinkClick}
-                        className={`px-4 py-2 text-base text-gray-700 rounded-xl hover:bg-gray-200 hover:text-gray-700 flex justify-start items-center gap-4 ${pathname === subItem?.path + "/" &&
-                          "text-white bg-blue-900"
-                          }  `}
+                        className={`
+                          px-4 py-3 text-base rounded-2xl
+                          flex justify-start items-center gap-4
+                          transition-all duration-300 ease-in-out
+                          bg-white/0 backdrop-blur-
+                          text-white hover:text-white
+                          hover:bg-white/20 hover:shadow-lg
+                          hover:ring-1 hover:ring-white/30
+                          hover:brightness-125
+                          ${pathname === subItem?.path + "/" ? "bg-blue-800/80 shadow-inner" : ""}
+                        `}
                       >
-                        <span className="text-3xl rounded-full p-3 bg-white">
+                        <span className="
+                                w-14 h-14 flex items-center justify-center
+                                rounded-xl bg-white/10 backdrop-blur-xl
+                                shadow-md shadow-blue-300 ring-1 ring-white/20
+                                hover:ring-2 hover:ring-blue-200
+                                transition-all duration-300 ease-in-out
+                              ">
                           <Image
                             src={subItem?.image}
                             width={200}
                             height={200}
                             alt="Icon"
-                            className="w-7 h-7 object-contain filter invert"
+                            className="w-7 h-7 object-contain   drop-shadow"
                           />
                         </span>
-                        {subItem.name}
+                        <span className="w-2/3">
+                          {subItem.name}
+                        </span>
                       </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             )}
+
           </div>
         ))}
       </ul>

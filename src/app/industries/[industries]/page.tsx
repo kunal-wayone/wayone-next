@@ -1,9 +1,8 @@
 import HeroSection from "@/components/common/HeroSection";
+import ProjectsCards from "@/components/common/ProjectsCards";
 import ContactUs from "@/components/ContactUs";
-import FooterSection from "@/components/FooterSection";
 import IndustrySection from "@/components/IndustrySection";
 import OurDevSection from "@/components/OurDevSection";
-import ProjectSection from "@/components/ProjectSection";
 import TechSection from "@/components/TechSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -52,19 +51,26 @@ const cardsData = [
 export default function Home() {
   return (
     <div>
-      <HeroSection />
+      <HeroSection slideImage="/assets/images/lady.png"
+        title1="Smart Healthcare IT Solutions to ultimately"
+        title2="Provide Better Patient Care"
+        description="Our smart and scalable healthcare IT Solutions increases patient care, smooth clinical workflows and makes data-driven decisions better for news, hospitals, clinics, and wellness centers."
+        primaryLink="/"
+        primaryLinkTitle="Explore More"
+        secondaryLink="/contact-us"
+        secondaryLinkTitle="Start Your Project"
+      />
       <OurDevSection
         sectionTitle="Our Core Development &Technology Services"
         sectionDescription="We offer a wide range of services to boost your online presence and business growth. "
         cardsData={cardsData}
       />
-      <ProjectSection />
+      <ProjectsCards />
       <TechSection />
       <WhyChooseUs />
       <ContactUs />
       <IndustrySection />
       <TestimonialSection />
-      <FooterSection />
     </div>
   );
 }

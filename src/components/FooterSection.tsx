@@ -59,7 +59,7 @@ export default function FooterSection() {
             </div>
             <hr className='my-4 w-4/5' />
             {/* Contact Info */}
-            <div className='w-2/5'>
+            <div className='md:w-2/5'>
                 <div className="space-y-2 flex itece justify-between text-sm text-gray-100">
 
                     <p className='flex items-center gap-2'><IoMailOutline /> contact@wayoneit.com</p>
@@ -78,7 +78,7 @@ export default function FooterSection() {
                 src="/assets/images/namelogo.svg"
                 width={100}
                 height={100}
-                className="absolute right-0 bottom-0 w-52 h-auto object-contain opacity-80 pointer-events-none"
+                className="absolute right-0 bottom-0 w-52 h-auto object-contain opacity-50 md:opacity-80 pointer-events-none"
                 alt="Wayone IT Name Logo"
             />
         </footer>

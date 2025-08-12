@@ -136,12 +136,12 @@ export const SidebarTabs = [
   { id: 1, label: "About Us", path: "/about-us" },
   { id: 5, label: "Our Work", path: "/our-work" },
   { id: 2, label: "Contact Us", path: "/contact-us" },
-  { id: 3, label: "Privacy Policy", path: "/privacy-policy" },
-  {
-    id: 4,
-    label: "Terms And Conditions",
-    path: "/terms-and-conditions",
-  },
+  // { id: 3, label: "Privacy Policy", path: "/privacy-policy" },
+  // {
+  //   id: 4,
+  //   label: "Terms And Conditions",
+  //   path: "/terms-and-conditions",
+  // },
 ];
 
 const Sidebar = () => {
@@ -168,7 +168,7 @@ const Sidebar = () => {
           } transition-all duration-500 ease-in-out`}
       >
         <div className="bg-gray-50 text-gray-50">
-          <div className="flex p-3 shadow-md z-50 justify-between items-center">
+          <div className="flex p-3 shadow-md z-50 justify-start items-center gap-10 ">
             <Link href={"/"}>
               <Image
                 src={"/assets/images/logo.png"}
@@ -180,7 +180,7 @@ const Sidebar = () => {
                 className="w-3/4"
               />
             </Link>
-            <p className="font-extrabold text-2xl" onClick={toggleSidebar}>
+            <p className="font-extrabold text-gray-900 text-2xl" onClick={toggleSidebar}>
               x
             </p>
           </div>

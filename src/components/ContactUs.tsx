@@ -51,7 +51,7 @@ export default function ContactUs() {
                     <p className="text-gray-600">
                         Reach out now to discuss how our innovative solutions can accelerate your business growth and transform your digital landscapeReminder for images Portfolio Section 4 line.                     </p>
                     <Image
-                        src={'/assets/images/contact.png'}
+                        src={'/assets/images/homecontact.png'}
                         alt="Contact"
                         className=""
                         width={900}

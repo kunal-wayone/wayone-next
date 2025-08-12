@@ -66,10 +66,10 @@ const OurDevSection = ({ sectionTitle, sectionDescription, cardsData }: any) => 
     };
 
     return (
-        <div className="py-16 flex items-center justify-center m-auto" ref={ref} >
+        <div className="py-4 lg:py-16 flex flex-col lg:flex-row items-center justify-center m-auto" ref={ref} >
             {/* Section 1: Title & Description (2/6) */}
             <motion.div
-                className="flex-2/6 text-left py-12 px-16 bg-white"
+                className="flex-2/6 text-left p-4 md:py-12 md:px-16 bg-white"
                 initial="hidden"
                 animate={isInView ? 'visible' : 'hidden'}
                 variants={textVariants}
@@ -90,10 +90,9 @@ const OurDevSection = ({ sectionTitle, sectionDescription, cardsData }: any) => 
 
             {/* Section 2: Grid of Cards (4/6) */}
             < div
-                className="flex-4/6 px-6 bg-primary p-6 relative"
-                style={{ borderTopLeftRadius: '3rem', borderBottomLeftRadius: '3rem' }}
+                className="flex-4/6 px-6 bg-primary p-6 rounded-none md:rounded-l-[3rem] relative"
             >
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
                     {cardsData?.slice(0, 5).map((card: any, index: any) => (
                         <motion.div
                             key={index}
@@ -149,7 +148,7 @@ const OurDevSection = ({ sectionTitle, sectionDescription, cardsData }: any) => 
                         alt={'UAE'}
                         width={900}
                         height={900}
-                        className="w-auto h-5/6 absolute bottom-0 right-0 brightness-110 object-contain mr-auto"
+                        className="w-auto h-44 md:h-5/6 absolute bottom-0 right-0 brightness-110 object-contain mr-auto"
                     />
                 </div>
             </ div>

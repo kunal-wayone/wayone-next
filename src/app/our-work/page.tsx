@@ -1,9 +1,6 @@
 import HeroSection from "@/components/common/HeroSection";
+import ProjectsCards from "@/components/common/ProjectsCards";
 import ContactUs from "@/components/ContactUs";
-import FooterSection from "@/components/FooterSection";
-import IndustrySection from "@/components/IndustrySection";
-import OurDevSection from "@/components/OurDevSection";
-import ProjectSection from "@/components/ProjectSection";
 import TechSection from "@/components/TechSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -53,12 +50,11 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <ProjectSection />
+      <ProjectsCards />
       <TechSection />
       <WhyChooseUs />
       <ContactUs />
       <TestimonialSection />
-      <FooterSection />
     </div>
   );
 }

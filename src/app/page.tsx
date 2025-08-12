@@ -1,9 +1,8 @@
 import HeroSection from "@/components/common/HeroSection";
+import ProjectsCards from "@/components/common/ProjectsCards";
 import ContactUs from "@/components/ContactUs";
-import FooterSection from "@/components/FooterSection";
 import IndustrySection from "@/components/IndustrySection";
 import OurDevSection from "@/components/OurDevSection";
-import ProjectSection from "@/components/ProjectSection";
 import TechSection from "@/components/TechSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
@@ -52,19 +51,25 @@ const cardsData = [
 export default function Home() {
   return (
     <div>
-      <HeroSection />
+      <HeroSection
+        title1="Advanced Web & App Development"
+        title2="Solutions for Your Business"
+        description="We provide innovative and scalable web and mobile application solutions, developed with latest technologies and framework to improve performance, guarantee system reliability, and business efficiency across various digital platforms"
+        primaryLink="/contact-us"
+        secondaryLink="/about-us"
+      />
       <OurDevSection
         sectionTitle="Our Core Development &Technology Services"
         sectionDescription="We offer a wide range of services to boost your online presence and business growth. "
         cardsData={cardsData}
       />
-      <ProjectSection />
+      {/* <ProjectSection /> */}
+      <ProjectsCards />
       <TechSection />
       <WhyChooseUs />
       <ContactUs />
       <IndustrySection />
       <TestimonialSection />
-      <FooterSection />
     </div>
   );
 }

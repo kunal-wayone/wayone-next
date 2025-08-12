@@ -11,7 +11,7 @@ const SocialMediaLinks = ({ size }: { size?: number }) => {
       icon: (
         <FaInstagram
           size={size ?? 20}
-          className="text-white hover:text-primary"
+          className="text-primary hover:text-primary"
         />
       ),
       label: "Instagram",
@@ -21,7 +21,7 @@ const SocialMediaLinks = ({ size }: { size?: number }) => {
       icon: (
         <FaFacebook
           size={size ?? 20}
-          className="text-white hover:text-primary"
+          className="text-primary hover:text-primary"
         />
       ),
       label: "Facebook",

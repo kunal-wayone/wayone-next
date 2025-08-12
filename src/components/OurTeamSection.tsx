@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import Link from 'next/link';
 import { IoLogoFacebook, IoLogoInstagram } from 'react-icons/io';
+import Image from 'next/image';
 
 const LiquidCard = ({ member }: any) => (
     <motion.div
@@ -28,7 +29,9 @@ const LiquidCard = ({ member }: any) => (
             style={{ originY: 1 }}
         />
         <div className="w-full ">
-            <img
+            <Image
+                width={900}
+                height={900}
                 src={member.image}
                 alt={member.name}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -75,7 +78,7 @@ export default function OurTeamSection({ subtitle, title, colorTitle, descriptio
     const activeMember = team[activeIndex];
 
     return (
-        <div className="p-4 lg:px-16 text-left max-w-7xl m-auto">
+        <div className="p-4 lg:px-16 text-left max-w-7xl m-auto overflow-y-clip overflow-x-hidden">
             {/* Title Section */}
             {subtitle && <h3 className="text-xl text-secondary mb-2">{subtitle}</h3>}
             {title && (
@@ -85,9 +88,9 @@ export default function OurTeamSection({ subtitle, title, colorTitle, descriptio
             )}
             {description && <p className="text-base text-gray-600 mb-6">{description}</p>}
 
-            <div className="mx-auto flex items-center justify-between gap-8">
+            <div className="mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-8">
                 {/* Left Info Box */}
-                <div className='w-1/2 px-10 text-left'>
+                <div className='md:w-1/2 px-10 text-left'>
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeMember.id}
@@ -109,7 +112,7 @@ export default function OurTeamSection({ subtitle, title, colorTitle, descriptio
                 </div>
 
                 {/* Right Swiper Card */}
-                <div className='w-/3 text-center'>
+                <div className=' text-center'>
                     <Swiper
                         modules={[EffectCards]}
                         effect="cards"

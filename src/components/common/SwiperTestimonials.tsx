@@ -8,25 +8,25 @@ import Image from 'next/image';
 
 const testimonials = [
   {
-    name: 'Alice Johnson',
+    name: 'Nisha Kumari',
     image: '/assets/images/pr1.png',
-    quote: 'This service exceeded my expectations!',
+    quote: '“The branding and design services provided by Wayone IT Solutions PVT. LTD gave our company a modern, professional look that resonates with our target audience. We’ve noticed a significant increase in customer engagement!”',
   },
   {
     name: 'Bob Smith',
     image: '/assets/images/pr2.png',
-    quote: 'Truly professional and reliable.',
+    quote: 'We’re proud to have earned the trust of over 1200 clients who rely on our expertise to fuel their success—and that number keeps rising!',
   },
   {
     name: 'Clara Adams',
     image: '/assets/images/pr3.png',
-    quote: 'Exceptional customer support and quality.',
+    quote: "“WayOne's team completely transformed our online presence.Their SEO and digital marketing expertise helped us rank higher on search engines, bringing in more leads than ever before!”",
   },
 ];
 
 export default function SwiperTestimonials() {
   return (
-    <div className='w-4/5 max-w-md pr-6 mx-auto'>
+    <div className='w-5/6 md:w-4/5 max-w-md md:pr-6 mx-auto'>
       <div>
         <h3 className='text-3xl mb-2 font-bold w-full'>1200+ Clients, Unmatched
           <br />  <span className='text-primary'>
@@ -42,22 +42,23 @@ export default function SwiperTestimonials() {
       >
         {testimonials.map((t, index) => (
           <SwiperSlide key={index}>
-            <div className='relative h-44 bg-blue-50 p-4 pt-2 rounded-3xl overflow-visible w-full'>
+            <div className='relative h-56  p-4 pt-2 rounded-3xl overflow-visible w-full'>
 
-              <div className='flex items-end justify-start gap-2 absolute'>
-
+              <div className='flex items-end justify-start gap-1 absolute pl-4'>
                 <Image
                   src={t.image}
                   alt={t.name}
                   width={800}
                   height={800}
-                  className='w-16 h-16 rounded-full left-0 -top-5  '
+                  className='w-20 h-20 rounded-full left-0 -top-5  '
 
                 />
                 <h4 className='w-full font-semibold mb-2 '>{t.name}</h4>
               </div>
-              <div className='bg-blue-200 rounded-2xl mt-10 p-4 h-28  text-sm'>
-                <p className='line-clamp-4'>&quot;{t.quote}&quot;</p>
+              <div className='bg-blue-100 rounded-2xl mt-10 h-40 pt-10 pb-4 px-4  text-sm'>
+                <div className='bg-white rounded-2xl h-full w-full p-4'>
+                  <p className='line-clamp-4'>&quot;{t.quote}&quot;</p>
+                </div>
               </div>
             </div>
           </SwiperSlide>

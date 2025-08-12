@@ -76,10 +76,11 @@ const HeroSection = ({
   title2 = "Solutions for Your Business",
   description = "We provide innovative and scalable web and mobile application solutions...",
   awardShow = true,
-  primaryLink = "/contact",
-  secondaryLink = "/services",
+  primaryLink = "/contact-us",
+  secondaryLink = "/about-us",
   primaryLinkTitle = "Contact Us",
   secondaryLinkTitle = "View More",
+  slideImage = "/assets/images/heroh2.png"
 }: {
   title1?: string;
   title2?: string;
@@ -89,6 +90,7 @@ const HeroSection = ({
   secondaryLink?: string;
   primaryLinkTitle?: string;
   secondaryLinkTitle?: string;
+  slideImage?: string
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
@@ -130,14 +132,14 @@ const HeroSection = ({
   };
 
   return (
-    <section id="home" className="relative flex items-start min-h-screen h-[115vh] rounded-b-[4rem] w-[98%] mx-auto overflow-hidden">
+    <section id="home" className="relative flex items-start min-h-[30vh] mt-10 md:mt-0 md:min-h-screen md:h-[115vh] md:rounded-b-[4rem] w-full md:w-[98%] mx-auto overflow-hidden">
       {/* === Background SVG === */}
       <Image
         src="/assets/images/bghero1.svg"
         width={1600}
         height={900}
         alt="Hero Background"
-        className="absolute inset-0 object-cover w-full mx-auto h-auto -z-10"
+        className="absolute inset-0 object-none md:object-cover mt-6 md:mt-0 w-full mx-auto h-auto -z-10"
       />
 
       {/* === Floating Hero Images === */}
@@ -151,16 +153,16 @@ const HeroSection = ({
           <motion.div
             key={idx}
             variants={imageVariant}
-            className={`absolute ${img.className} h-fit max-h-72 object-contain -z-10`}
+            className={`hidden md:block  absolute ${img.className} h-fit max-h-72 object-contain -z-10`}
           >
             <Image src={img.src} alt={`Hero Image ${idx}`} width={100} height={100} />
           </motion.div>
         ))}
 
         {/* Side Illustration */}
-        <motion.div variants={imageVariant} className="absolute bottom-20 right-0.5 w-2/5 -z-10">
+        <motion.div variants={imageVariant} className="absolute bottom-0 md:bottom-20 right-0 md:right-0.5 w-3/5 md:w-2/5 -z-10">
           <Image
-            src="/assets/images/heroh2.png"
+            src={slideImage}
             width={600}
             height={400}
             alt="Hero Side"
@@ -173,7 +175,7 @@ const HeroSection = ({
       <div className="absolute w-full h-full px-4 sm:px-6 lg:px-8 flex items-center">
         <motion.div
           ref={ref}
-          className="max-w-5xl space-y-6 ml-20 w-2/3"
+          className="max-w-5xl md:space-y-6 md:ml-20 w-2/3"
           initial="hidden"
           animate={controls}
           variants={containerVariants}
@@ -185,10 +187,10 @@ const HeroSection = ({
               variants={textVariants}
               className={
                 i === 0
-                  ? "text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-50"
+                  ? "text-xl sm:text-4xl lg:text-5xl font-semibold text-gray-50"
                   : i === 1
-                    ? "text-xl sm:text-2xl font-semibold text-gray-100"
-                    : "text-base sm:text-lg text-gray-300"
+                    ? "text-sm sm:text-2xl font-semibold text-gray-100"
+                    : "text-[10px] sm:text-lg text-gray-100 font-semibold"
               }
             >
               {text}
@@ -196,13 +198,13 @@ const HeroSection = ({
           ))}
 
           {/* === Call to Action Buttons === */}
-          <motion.div className="flex flex-col sm:flex-row gap-4 mt-8" variants={containerVariants}>
+          <motion.div className="flex  flex-row items-center justify-start gap-4 mt-2 md:mt-8" variants={containerVariants}>
             {buttons.map((btn, index) => (
-              <motion.div key={index} variants={buttonVariant}>
+              <motion.div key={index} className="" variants={buttonVariant}>
                 <Link href={btn.link}>
                   <span
                     onMouseMove={(e) => handleMouseMove(e, index)}
-                    className={`relative inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-${btn.colors.from} to-${btn.colors.to} text-${btn.colors.text} font-semibold text-sm sm:text-base shadow-lg overflow-hidden transition-all`}
+                    className={`relative inline-flex items-center px-2 md:px-4 md:py-1.5 rounded-full bg-gradient-to-r from-${btn.colors.from} to-${btn.colors.to} text-${btn.colors.text} font-semibold text-[9px] md:text-sm sm:text-base shadow-lg overflow-hidden transition-all`}
                   >
                     {/* Hover Effect */}
                     <motion.span
@@ -225,7 +227,7 @@ const HeroSection = ({
                         : "bg-gradient-to-r from-gray-100 to-gray-300 text-[#215bdb]"
                         }`}
                     >
-                      <IoArrowForward className="text-lg" />
+                      <IoArrowForward className="text-xs md:text-lg" />
                     </span>
                   </span>
                 </Link>
@@ -236,7 +238,7 @@ const HeroSection = ({
           {/* === Awards Section === */}
           {awardShow && (
             <motion.div
-              className="flex absolute bottom-5 right-5 items-center gap-2 mt-10"
+              className="hidden md:flex absolute bottom-5 right-5 items-center gap-2 mt-10"
               variants={containerVariants}
               initial="hidden"
               animate={controls}
