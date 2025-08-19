@@ -57,10 +57,11 @@ export default function ContactUs() {
                         width={900}
                         height={900}
                     />
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.6069751171517!2d55.27513467402564!3d25.216473430922186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f428cd916c7f9%3A0x9520894d0e5f1854!2sAl%20Moosa%20Tower%202%20-%20Sheikh%20Zayed%20Rd%20-%20near%20Emirates%20Tower%20Metro%20Station%20-%20Trade%20Centre%20-%20Trade%20Centre%201%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sin!4v1755601958936!5m2!1sen!2sin" width="500" height="220" style={{borderRadius:'2rem'}} className='m-auto mt-4'  allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
                 {/* Right Column (Form) */}
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-primary p-10 rounded-l-[3rem] overflow-hidden relative">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-primary p-10 pt-20 rounded-l-[3rem] overflow-hidden relative">
                     <div>
                         <input
                             {...register('name')}
