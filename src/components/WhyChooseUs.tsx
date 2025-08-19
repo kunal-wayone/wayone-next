@@ -113,7 +113,7 @@ export default function WhyChooseUs() {
                     width={1650}
                     height={900}
                     alt="Decoration"
-                    className="w-full h-full mb-[-7rem] z-[1000] ml-auto object-top drop-shadow drop-shadow-gray-300"
+                    className="w-full h-full mb-[-7rem] z-[1000] ml-auto object-top drop-shadow drop-shadow-gray-500"
                 />
             </motion.div>
         </div>

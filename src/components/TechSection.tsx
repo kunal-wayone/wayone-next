@@ -6,6 +6,7 @@ import {
   animate,
 } from 'framer-motion';
 import TechIcon from './common/TechIcon';
+import OurPartners from './OurPartners';
 
 // Icon list
 const techIcons = [
@@ -40,7 +41,7 @@ export default function TechSection() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col h-screen items-center justify-center pb-20 relative overflow-hidden">
+    <div className="w-full flex flex-col py-20 items-center justify-center relative overflow-hidden">
       {/* Header */}
       <div className="absolute top-0 text-center px-4">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">
@@ -81,6 +82,7 @@ export default function TechSection() {
           />
         ))}
       </div>
+        <OurPartners />
     </div>
   );
 }

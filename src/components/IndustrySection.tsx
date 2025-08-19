@@ -109,9 +109,17 @@ export default function IndustrySection() {
                     alt={industry.title}
                     layout="fill"
                     objectFit="contain"
+                    className='z-10'
+                  />
+                  <Image
+                    src={'/assets/images/industrycircle2.png'}
+                    alt={''}
+                    layout="fill"
+                    objectFit="contain"
+                    className='-mt-3 scale-110'
                   />
                 </div>
-                <h3 className="text-md w-1/2 m-auto font-semibold text-gray-100 z-10">
+                <h3 className="text-xl text-left px-10 w-2/3 mr-auto font-bold text-gray-100 z-10">
                   {industry.title}
                 </h3>
               </motion.div>

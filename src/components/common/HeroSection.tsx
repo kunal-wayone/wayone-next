@@ -103,10 +103,10 @@ const HeroSection = ({
 
   const heroImages = [
     { src: "/assets/images/group1.png", className: "bottom-44 left-0 w-16" },
-    { src: "/assets/images/group5.png", className: "bottom-2 left-20 w-20" },
-    { src: "/assets/images/group2.png", className: "bottom-2 left-44 w-20" },
-    { src: "/assets/images/group3.png", className: "bottom-2 left-[17rem] max-w-[150px]" },
-    { src: "/assets/images/group6.png", className: "bottom-2 left-[24rem] max-w-[150px]" },
+    { src: "/assets/images/group5.png", className: "-bottom-4 left-20 w-20" },
+    { src: "/assets/images/group2.png", className: "-bottom-6 left-44 w-16" },
+    { src: "/assets/images/group3.png", className: "-bottom-6 left-[16rem] max-w-[150px]" },
+    { src: "/assets/images/group6.png", className: "-bottom-6 left-[23rem] max-w-[150px]" },
   ];
 
   const buttons: ButtonProps[] = [
@@ -132,14 +132,14 @@ const HeroSection = ({
   };
 
   return (
-    <section id="home" className="relative flex items-start min-h-[30vh] mt-10 md:mt-0 md:min-h-screen md:h-[115vh] md:rounded-b-[4rem] w-full md:w-[98%] mx-auto overflow-hidden">
+    <section id="home" className="relative flex items-start min-h-[30vh] mt-10 md:mt-0 md:min-h-[98vh] overflow- md:rounded-b-[4rem] w-full md:w-[98%] mx-auto overflow-x-clip">
       {/* === Background SVG === */}
       <Image
-        src="/assets/images/bghero1.svg"
+        src="/assets/images/bgScreens.svg"
         width={1600}
         height={900}
         alt="Hero Background"
-        className="absolute inset-0 object-none md:object-cover mt-6 md:mt-0 w-full mx-auto h-auto -z-10"
+        className="absolute inset-0 top-4 object-none md:object-cover mt-6 md:mt-0 w-full mx-auto h-auto -z-10"
       />
 
       {/* === Floating Hero Images === */}
@@ -153,14 +153,14 @@ const HeroSection = ({
           <motion.div
             key={idx}
             variants={imageVariant}
-            className={`hidden md:block  absolute ${img.className} h-fit max-h-72 object-contain -z-10`}
+            className={`hidden md:block  absolute ${img.className} h-fit max-h-52 object-contain -z-10`}
           >
             <Image src={img.src} alt={`Hero Image ${idx}`} width={100} height={100} />
           </motion.div>
         ))}
 
         {/* Side Illustration */}
-        <motion.div variants={imageVariant} className="absolute bottom-0 md:bottom-20 right-0 md:right-0.5 w-3/5 md:w-2/5 -z-10">
+        <motion.div variants={imageVariant} className="absolute bottom-0 md:bottom-[-10%] right-0 md:right-0.4 w-2/5 md:w-2/6 -z-10">
           <Image
             src={slideImage}
             width={600}
@@ -187,7 +187,7 @@ const HeroSection = ({
               variants={textVariants}
               className={
                 i === 0
-                  ? "text-xl sm:text-4xl lg:text-5xl font-semibold text-gray-50"
+                  ? "text-xl sm:text-4xl lg:text-5xl w-full md:w-2/3 font-semibold text-gray-50"
                   : i === 1
                     ? "text-sm sm:text-2xl font-semibold text-gray-100"
                     : "text-[10px] sm:text-lg text-gray-100 font-semibold"
@@ -238,7 +238,7 @@ const HeroSection = ({
           {/* === Awards Section === */}
           {awardShow && (
             <motion.div
-              className="hidden md:flex absolute bottom-5 right-5 items-center gap-2 mt-10"
+              className="hidden absolute bottom-5 right-5 items-center gap-2 mt-10"
               variants={containerVariants}
               initial="hidden"
               animate={controls}

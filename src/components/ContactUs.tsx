@@ -43,29 +43,29 @@ export default function ContactUs() {
     };
 
     return (
-        <div className="min-h-screen px-6 py-10 bg-white text-gray-800 pt-28">
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+        <div className=" py-10 bg-white text-gray-800 pt-28">
+            <div className=" mx-auto grid md:grid-cols-2 gap-12">
                 {/* Left Column */}
-                <div className="flex flex-col justify-center space-y-2">
-                    <h2 className="text-4xl font-bold text-gray-800">Let’s Build the Future Together! <br /> <span className='text-primary'> Contact Us Today</span></h2>
+                <div className="flex flex-col items-start justify-start space-y-2 p-16">
+                    <h2 className="text-5xl font-bold text-gray-800">Let’s Build the Future <br /> Together! <span className='text-secondary'> Contact Us <br /> Today</span></h2>
                     <p className="text-gray-600">
                         Reach out now to discuss how our innovative solutions can accelerate your business growth and transform your digital landscapeReminder for images Portfolio Section 4 line.                     </p>
                     <Image
-                        src={'/assets/images/homecontact.png'}
+                        src={'/assets/images/arrow.png'}
                         alt="Contact"
-                        className=""
+                        className="w-2/3 ml-auto hidden"
                         width={900}
                         height={900}
                     />
                 </div>
 
                 {/* Right Column (Form) */}
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 bg-primary p-10 rounded-l-[3rem] overflow-hidden relative">
                     <div>
                         <input
                             {...register('name')}
                             placeholder='Enter your name'
-                            className="w-full bg-gray-100 py-3 mt-1 px-4  border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="w-full bg-blue-100/40 py-3 mt-1 px-4 text-white placeholder-gray-50 border border-blue-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none"
                         />
                         {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
                     </div>
@@ -75,7 +75,7 @@ export default function ContactUs() {
                             type="email"
                             {...register('email')}
                             placeholder='Enter you email address'
-                            className="w-full bg-gray-100 py-3 mt-1 px-4  border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="w-full bg-blue-100/40 py-3 mt-1 px-4 text-white placeholder-gray-50 border border-blue-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none"
                         />
                         {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
                     </div>
@@ -84,7 +84,7 @@ export default function ContactUs() {
                         <input
                             {...register('phone')}
                             placeholder='Enter your phone number'
-                            className="w-full bg-gray-100 py-3 mt-1 px-4  border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="w-full bg-blue-100/40 py-3 mt-1 px-4 text-white placeholder-gray-50 border border-blue-300 rounded-full focus:ring-2 focus:ring-blue-500 focus:outline-none"
                         />
                         {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
                     </div>
@@ -94,7 +94,7 @@ export default function ContactUs() {
                             rows={4}
                             {...register('message')}
                             placeholder='Message'
-                            className="w-full bg-gray-100 py-3 p-10 mt-1 px-4  border border-gray-300 rounded-4xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                            className="w-full bg-blue-100/40 py-3 mt-1 px-4 text-white placeholder-gray-50 border border-blue-300 rounded-4xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
                         />
                         {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
                     </div>
@@ -102,25 +102,34 @@ export default function ContactUs() {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="relative w-full text-white py-2 px-4 rounded-full
-                        bg-gradient-to-br from-blue-800 via-blue-900 to-blue-950
-                        bg-opacity-60 brightness-130 hover:scale-102
+                        className={`relative z-50 w-full py-2 px-4 rounded-full text-primary font-bold
+                        bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300
                         backdrop-blur-md border border-white/10
                         shadow-[0_8px_30px_rgba(0,0,0,0.4)]
-                        ring-1 ring-inset ring-blue-300/10
-                        transition duration-200 ease-in-out disabled:opacity-50
-                        overflow-hidden"
+                        ring-1 ring-inset ring-gray-300/10
+                        transition duration-200 ease-in-out
+                        overflow-hidden
+                        hover:scale-105
+                        disabled:opacity-50
+                        `}
                     >
                         {/* Shine Overlay */}
-                        <span className="pointer-events-none absolute top-0 left-0 w-full h-1/3
-                                        bg-gradient-to-b from-white/40 to-transparent
-                                        rounded-t-full brightness-120
-                                        opacity-60
-                                        blur-sm" />
+                        <span
+                            className="pointer-events-none absolute top-0 left-0 w-full h-1/3
+      bg-gradient-to-b from-white/40 to-transparent
+      rounded-t-full opacity-60 blur-sm"
+                        />
 
                         {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
 
+                    <Image
+                        src={'/assets/images/serviceicon.png'}
+                        alt={'UAE'}
+                        width={900}
+                        height={900}
+                        className="w-auto h-44 md:h-5/6 absolute -bottom-5 -right-6 brightness-70 object-contain mr-auto"
+                    />
                 </form>
             </div>
 

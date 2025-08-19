@@ -90,10 +90,10 @@ const OurDevSection = ({ sectionTitle, sectionDescription, cardsData }: any) => 
 
             {/* Section 2: Grid of Cards (4/6) */}
             < div
-                className="flex-4/6 px-6 bg-primary p-6 rounded-none md:rounded-l-[3rem] relative"
+                className="flex-4/6 px-6 bg-primary p-6 rounded-none md:rounded-l-[3rem]  "
             >
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-                    {cardsData?.slice(0, 5).map((card: any, index: any) => (
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto overflow- relative ">
+                    {cardsData?.slice(0, 6).map((card: any, index: any) => (
                         <motion.div
                             key={index}
                             className="bg-transparent p-2"
@@ -127,28 +127,28 @@ const OurDevSection = ({ sectionTitle, sectionDescription, cardsData }: any) => 
                             </div>
                         </motion.div>
                     ))}
-                    <motion.div
-                        className="bg-transparent p-6 h-full w-full flex justify-center items-center"
-                        initial="hidden"
-                        animate={isInView ? 'visible' : 'hidden'}
-                        variants={viewMoreVariants}
-                        whileHover="hover"
-                    >
-                        <div className="text-left m-auto">
-                            <Link
-                                href={''}
-                                className="text-gray-300 font-medium hover:underline"
-                            >
-                                View More →
-                            </Link>
-                        </div>
-                    </motion.div>
+
+                    <div className="text-left m-auto absolute -bottom-19 right-10  bg-secondary w-44 h-13 rounded-b-[3rem] flex items-end justify-center pb-4">
+                        <Link
+                            href={'/our-work'}
+                            className="text-gray-50 font-semibold z-50 hover:underline"
+                        >
+                            View More
+                            <span className='rotate-[-45deg] pl-2 inline-block'>
+                                →
+                            </span>
+                        </Link>
+                    </div>
+
+                    <div className="text-left m-auto absolute -top-6 -right-6 md:right-0 z-10 bg-secondary w-36 h-16 rounded-b-full flex items-end justify-center pb-4">
+                        <Image src={'/assets/images/icons/webd.png'} alt='' width={100} height={100} className='h-10 w-10 object-contain' />
+                    </div>
                     <Image
                         src={'/assets/images/serviceicon.png'}
                         alt={'UAE'}
                         width={900}
                         height={900}
-                        className="w-auto h-44 md:h-5/6 absolute bottom-0 right-0 brightness-110 object-contain mr-auto"
+                        className="w-auto h-44 md:h-5/6 absolute -bottom-5 -right-6 brightness-70 object-contain mr-auto"
                     />
                 </div>
             </ div>
